@@ -1,8 +1,20 @@
-import list from "../../public/list.json";
+import { useState } from "react";
 import { Card } from "./Card";
+import { useEffect } from "react";
+import axios from "axios"
 
 export const Freebook = () => {
-  const filterdata = list.filter((data) => data.category === "free");
+  const [data,setdata] = useState([])
+
+  useEffect(()=>{
+    const getData = async()=>{
+      const res = await axios.get("http://localhost:4001/book")
+      setdata(res.data)
+     }
+     getData()
+  },[])
+  
+  const filterdata = data.filter((data) => data.category === "free");
 
   return (
     <>

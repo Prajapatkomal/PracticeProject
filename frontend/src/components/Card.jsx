@@ -16,8 +16,8 @@ export const Card = ({item}) => {
           </h2>
           <p>{item.title}</p>
           <div className="card-actions justify-between">
-            <div className="badge badge-outline">${item.price}</div>
-            <div className="badge badge-outline hover:bg-pink-500 hover:text-white ">buy Now</div>
+            <div className="badge badge-outline p-3">${item.price}</div>
+            <div className="badge badge-outline hover:bg-pink-500 hover:text-white cursor-pointer p-3">buy Now</div>
           </div>
         </div>
       </div>
